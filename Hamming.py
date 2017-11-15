@@ -30,9 +30,10 @@ def generate_binarization(n, x):
         x = x - 1
     return []
 
-if len(sys.argv) < 3:
-    print("Wrong number of arguments.")
-    sys.exit(0)
-x = int(sys.argv[1])
-n = int(sys.argv[2])
-print(generate_binarization(x, n))
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Wrong number of arguments.")
+        sys.exit(0)
+    x = int(sys.argv[1])
+    n = int(sys.argv[2])
+    print(generate_binarization(x, n))

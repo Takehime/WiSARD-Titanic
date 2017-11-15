@@ -96,6 +96,7 @@ def get_data(filename):
             i = 0
             p_id = row[i]
 
+            survived = None
             if "train" in filename:
                 i = i + 1
                 if row[i] == "1":
@@ -161,16 +162,23 @@ def get_data(filename):
     
     return people
 
-def get_binary_passengers():
+def get_binary_passengers(filename):
     output = []
     result = []
-    data = get_data('Resources/train.csv')
+    data = get_data(filename)
     for p in data:
         string, survived = p.binarize()
-        if len(string) != 24:
-            print(str(p))
         output.append(binary_string_to_int_array(string))
         result.append(survived)
+    return output, result
+
+def get_passengers(filename):
+    output = []
+    result = []
+    data = get_data(filename)
+    for p in data:
+        output.append(p)
+        result.append(str(p.survived))
     return output, result
 
 def binary_string_to_int_array(string):
@@ -182,9 +190,9 @@ def binary_string_to_int_array(string):
             output.append(1)
     return output
 
-def print_passengers():
-    for p in get_data('Resources/train.csv'):
+def print_passengers(filename):
+    for p in get_data(filename):
         print(p.binarize())
 
 if __name__ == "__main__":
-    print_passengers()
+    print_passengers('Resources/test.csv')
