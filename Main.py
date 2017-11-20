@@ -6,7 +6,7 @@ import sys
 def generate_test_prediction(num_bits_addr):
     X = []
     y = []
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    binary, result = r.get_binary_passengers('Resources/train.csv', [5, 15, 26, 37, 80])
 
     for i in range(0, len(binary) - 1):
         X.append(binary[i])
@@ -15,7 +15,7 @@ def generate_test_prediction(num_bits_addr):
     w = wi.WiSARD(num_bits_addr)
     w.fit(X, y)
 
-    binary, result = r.get_binary_passengers('Resources/test.csv')
+    binary, result = r.get_binary_passengers('Resources/test.csv', [5, 15, 26, 37, 80])
     passengers, res = r.get_passengers('Resources/test.csv')
 
     output = "PassengerId,Survived\n"
@@ -34,13 +34,13 @@ def generate_test_prediction(num_bits_addr):
     print("Done.")
     print("====================")        
 
-def local_test(num_bits, thorough_test):
+def local_test(num_bits, thorough_test, gen):
     num_bits_addr = num_bits
     successes = 0
     tries = 0
     X = []
     y = []
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    binary, result = r.get_binary_passengers('Resources/train.csv', gen)
 
     for i in range(0, int(0.8*len(binary))):
         X.append(binary[i])
@@ -64,14 +64,31 @@ def local_test(num_bits, thorough_test):
         print("Accuracy: " + str(successes * 100 / float(tries)) + "%")        
         print("====================")
 
-def local_test_cross_validation(num_bits, k_folds, fold_to_test):
+    return successes * 100 / float(tries)
+
+def local_test_cross_validation(num_bits, k_folds, gen):
+    total_tries = 0
+    total_successes = 0
+    for i in range(0, k_folds):
+        tries, successes = local_test_cross_validation_fold_test(num_bits, k_folds, i, gen)
+        total_tries = total_tries + tries
+        total_successes = total_successes + successes
+    accuracy = total_successes * 100 / float(total_tries)
+    print("====================")        
+    print("Tries: " + str(total_tries))        
+    print("Successes: " + str(total_successes))        
+    print("Accuracy: " + str(accuracy) + "%")        
+    print("====================")
+    return accuracy
+
+def local_test_cross_validation_fold_test(num_bits, k_folds, fold_to_test, gen):
     num_bits_addr = num_bits
     successes = 0
     tries = 0
     X = []
     y = []
     passengers, res = r.get_passengers('Resources/train.csv')
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    binary, result = r.get_binary_passengers('Resources/train.csv', gen)
 
     fold_size = int(len(binary) / k_folds)
 
@@ -128,6 +145,7 @@ def print_usage():
     print("     [T]: Train with 80% of training set and test on the other 20% (num_bits_addr: 5)")
     print("     [T*]: Same as T, but tests with every num_bits_address in the range (0, 40)")
     print("     [G -n]: Train with the entirety of the training set and test on the test set, generating a file 'result.csv' in Resources folder. Using 'n' as num_bits_addr.")
+    print("     [C -n -k]: Local test using cross-validation with 'k' folds and 'n' num bits of address.")
 
 def find_percentiles():
     passengers, res = r.get_passengers('Resources/train.csv')
@@ -150,23 +168,14 @@ if __name__ == "__main__":
         print_usage()
         sys.exit(0)
     if str(sys.argv[1]) == "T":
-        local_test(20, False)
+        local_test(20, False, [5, 15, 26, 37, 80])
     elif str(sys.argv[1]) == "C":
-        k_folds = int(sys.argv[2])
-        total_tries = 0
-        total_successes = 0
-        for i in range(0, k_folds):
-            tries, successes = local_test_cross_validation(8, k_folds, i)
-            total_tries = total_tries + tries
-            total_successes = total_successes + successes
-        print("====================")        
-        print("Tries: " + str(total_tries))        
-        print("Successes: " + str(total_successes))        
-        print("Accuracy: " + str(total_successes * 100 / float(total_tries)) + "%")        
-        print("====================")
+        num_bits = int(sys.argv[2])
+        k_folds = int(sys.argv[3])
+        local_test_cross_validation(num_bits, k_folds, [5, 15, 26, 37, 80])
     elif str(sys.argv[1]) == "T*":
         for i in range(1, 20):
-            local_test(i, True)
+            local_test(i, True, [5, 15, 26, 37, 80])
     elif str(sys.argv[1]) == "G":
         if len(sys.argv) < 3:
             print_usage()
