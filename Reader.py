@@ -48,15 +48,15 @@ class Passenger:
 
     def binarize(self):
         string = ""
-        if self.age < 10:
+        if self.age < 1:
             string = string + "000000"
-        elif self.age < 20:
+        elif self.age < 5:
             string = string + "111111"
-        elif self.age < 30:
+        elif self.age < 20:
             string = string + "000111"
-        elif self.age < 40:
+        elif self.age < 28:
             string = string + "011001"
-        elif self.age < 50:
+        elif self.age < 38:
             string = string + "101010"
         else: #if self.age < 80:
             string = string + "110100"
@@ -64,21 +64,26 @@ class Passenger:
         if self.gender == "male":
             string = string + "000000"
         else:
-            string = string + "111111"
+            string = string + "011001"
 
         if self.t_class == "1":
             string = string + "000000"
         elif self.t_class == "2":
-            string = string + "111111"
+            string = string + "011001"
         else: #if self.t_class == "2":
             string = string + "000111"
 
         if self.port == "C":
             string = string + "000000"
         elif self.port == "Q":
-            string = string + "111111"
+            string = string + "011001"
         else: #if self.port == "S":
             string = string + "000111"
+
+        if self.cabin == "":
+            string = string + "000000"
+        else:
+            string = string + "011001"
 
         return string, self.survived
 
