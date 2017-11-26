@@ -64,7 +64,7 @@ def local_test(num_bits, thorough_test):
         print("Accuracy: " + str(successes * 100 / float(tries)) + "%")        
         print("====================")
 
-def cluswisard(nba):
+def cluswisard(nba, growth, score):
     successes = 0
     tries = 0
     binary, result = r.get_binary_passengers('Resources/train.csv')
@@ -77,7 +77,7 @@ def cluswisard(nba):
     gamma = 100
     d_size = {str(result[0]): 1, str(result[1]): 1}
 
-    for i in range(1, len(binary)):
+    for i in range(1, int(0.8*(len(binary)))):
         # print "Passenger #" + str(passengers[i].p_id)
         x = binary[i]
         fake_y = result[i]
@@ -87,13 +87,13 @@ def cluswisard(nba):
 
         was_learned = False
         for j in range(0, len(rez_score[0])):
-            gamma = float(600)
+            gamma = float(growth)
             if str(rez_classes[j]) not in d_size:
                 size = 0
             else:
                 size = d_size[str(rez_classes[j])]
 
-            minimum_score = min(1, 0.6 + size / gamma)
+            minimum_score = min(1, score + size / gamma)
 
             # print "y: " + str(fake_y)
             # print "rez_classes[j]: " + str(rez_classes[j])
@@ -120,6 +120,23 @@ def cluswisard(nba):
             d_size[new_class] = 1
             # print d_size
 
+    tries = 0
+    successes = 0
+
+    for i in range(int(0.8*(len(binary))), len(binary)):
+        score, classes, result = w.predict([binary[i]])
+        # prediction = w.predict([binary[i]])
+        tries += 1
+        if "True" in str(result[0]) and "True" in str(result_2[i]):
+            successes += 1
+        if "False" in str(result[0]) and "False" in str(result_2[i]):
+            successes += 1
+
+    print "===================="
+    print "Generated #" + str(classes_marker) + " new classes."
+    print "Successes: " + str(successes) + " || Tries: " + str(tries)
+    print "Accuracy: " + str(("{0:.2f}").format(successes * 100 / float(tries)) + "%") + "%"
+
     binary, result = r.get_binary_passengers('Resources/test.csv')
     passengers, res = r.get_passengers('Resources/test.csv')
 
@@ -135,7 +152,7 @@ def cluswisard(nba):
     f = open('Resources/result.csv','w')
     f.write(output)
     f.close()
-    print d_size
+    # print d_size
 
     print("====================")        
     print("Done.")
@@ -204,8 +221,8 @@ def print_usage():
     print("Usage: Main.py [T | G]")
     print("     [T]: Train with 80% of training set and test on the other 20% (num_bits_addr: 5)")
     print("     [T*]: Same as T, but tests with every num_bits_address in the range (0, 40)")
-    print("     [G -n]: Train with the entirety of the training set and test on the test set, generating a file 'result.csv' in Resources folder. Using 'n' as num_bits_addr.")
-    print("     [CW]: ClusWiSARD test.")
+    print("     [G (n)]: Train with the entirety of the training set and test on the test set, generating a file 'result.csv' in Resources folder. Using 'n' as num_bits_addr.")
+    print("     [CW (n) (g) (s)]: ClusWiSARD test. n: num_bits_addr; g: growth coefficient; s: minimum score")
 
 def find_percentiles():
     passengers, res = r.get_passengers('Resources/train.csv')
@@ -230,7 +247,7 @@ if __name__ == "__main__":
     if str(sys.argv[1]) == "T":
         local_test(20, False)
     if str(sys.argv[1]) == "CW":
-        cluswisard(int(sys.argv[2]))
+        cluswisard(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
     elif str(sys.argv[1]) == "C":
         k_folds = int(sys.argv[2])
         total_tries = 0
