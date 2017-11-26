@@ -1,419 +1,419 @@
 PassengerId,Survived
-892,(array([[5, 4]]), ['False', 'True'], ['False'])
-893,(array([[5, 4]]), ['False', 'True'], ['False'])
-894,(array([[5, 2]]), ['False', 'True'], ['False'])
-895,(array([[5, 4]]), ['False', 'True'], ['False'])
-896,(array([[5, 4]]), ['False', 'True'], ['False'])
-897,(array([[5, 4]]), ['False', 'True'], ['False'])
-898,(array([[5, 4]]), ['False', 'True'], ['False'])
-899,(array([[5, 4]]), ['False', 'True'], ['False'])
-900,(array([[4, 5]]), ['False', 'True'], ['True'])
-901,(array([[5, 4]]), ['False', 'True'], ['False'])
-902,(array([[5, 4]]), ['False', 'True'], ['False'])
-903,(array([[5, 4]]), ['False', 'True'], ['False'])
-904,(array([[4, 5]]), ['False', 'True'], ['True'])
-905,(array([[5, 4]]), ['False', 'True'], ['False'])
-906,(array([[4, 5]]), ['False', 'True'], ['True'])
-907,(array([[4, 5]]), ['False', 'True'], ['True'])
-908,(array([[4, 3]]), ['False', 'True'], ['False'])
-909,(array([[5, 4]]), ['False', 'True'], ['False'])
-910,(array([[5, 4]]), ['False', 'True'], ['False'])
-911,(array([[4, 5]]), ['False', 'True'], ['True'])
-912,(array([[5, 4]]), ['False', 'True'], ['False'])
-913,(array([[5, 4]]), ['False', 'True'], ['False'])
-914,(array([[4, 5]]), ['False', 'True'], ['True'])
-915,(array([[4, 5]]), ['False', 'True'], ['True'])
-916,(array([[4, 5]]), ['False', 'True'], ['True'])
-917,(array([[5, 4]]), ['False', 'True'], ['False'])
-918,(array([[4, 5]]), ['False', 'True'], ['True'])
-919,(array([[5, 4]]), ['False', 'True'], ['False'])
-920,(array([[5, 4]]), ['False', 'True'], ['False'])
-921,(array([[5, 4]]), ['False', 'True'], ['False'])
-922,(array([[5, 4]]), ['False', 'True'], ['False'])
-923,(array([[5, 4]]), ['False', 'True'], ['False'])
-924,(array([[4, 5]]), ['False', 'True'], ['True'])
-925,(array([[5, 4]]), ['False', 'True'], ['False'])
-926,(array([[5, 4]]), ['False', 'True'], ['False'])
-927,(array([[5, 4]]), ['False', 'True'], ['False'])
-928,(array([[5, 4]]), ['False', 'True'], ['False'])
-929,(array([[5, 4]]), ['False', 'True'], ['False'])
-930,(array([[5, 4]]), ['False', 'True'], ['False'])
-931,(array([[5, 4]]), ['False', 'True'], ['False'])
-932,(array([[5, 4]]), ['False', 'True'], ['False'])
-933,(array([[5, 4]]), ['False', 'True'], ['False'])
-934,(array([[5, 4]]), ['False', 'True'], ['False'])
-935,(array([[4, 5]]), ['False', 'True'], ['True'])
-936,(array([[4, 5]]), ['False', 'True'], ['True'])
-937,(array([[5, 4]]), ['False', 'True'], ['False'])
-938,(array([[4, 5]]), ['False', 'True'], ['True'])
-939,(array([[5, 4]]), ['False', 'True'], ['False'])
-940,(array([[4, 5]]), ['False', 'True'], ['True'])
-941,(array([[4, 5]]), ['False', 'True'], ['True'])
-942,(array([[4, 5]]), ['False', 'True'], ['True'])
-943,(array([[5, 4]]), ['False', 'True'], ['False'])
-944,(array([[4, 5]]), ['False', 'True'], ['True'])
-945,(array([[4, 5]]), ['False', 'True'], ['True'])
-946,(array([[4, 5]]), ['False', 'True'], ['True'])
-947,(array([[5, 4]]), ['False', 'True'], ['False'])
-948,(array([[5, 4]]), ['False', 'True'], ['False'])
-949,(array([[5, 4]]), ['False', 'True'], ['False'])
-950,(array([[5, 4]]), ['False', 'True'], ['False'])
-951,(array([[4, 5]]), ['False', 'True'], ['True'])
-952,(array([[5, 4]]), ['False', 'True'], ['False'])
-953,(array([[5, 4]]), ['False', 'True'], ['False'])
-954,(array([[5, 4]]), ['False', 'True'], ['False'])
-955,(array([[3, 4]]), ['False', 'True'], ['True'])
-956,(array([[5, 4]]), ['False', 'True'], ['False'])
-957,(array([[4, 5]]), ['False', 'True'], ['True'])
-958,(array([[3, 5]]), ['False', 'True'], ['True'])
-959,(array([[5, 4]]), ['False', 'True'], ['False'])
-960,(array([[5, 4]]), ['False', 'True'], ['False'])
-961,(array([[4, 5]]), ['False', 'True'], ['True'])
-962,(array([[3, 4]]), ['False', 'True'], ['True'])
-963,(array([[5, 4]]), ['False', 'True'], ['False'])
-964,(array([[5, 4]]), ['False', 'True'], ['False'])
-965,(array([[4, 5]]), ['False', 'True'], ['True'])
-966,(array([[4, 5]]), ['False', 'True'], ['True'])
-967,(array([[5, 4]]), ['False', 'True'], ['False'])
-968,(array([[5, 4]]), ['False', 'True'], ['False'])
-969,(array([[4, 5]]), ['False', 'True'], ['True'])
-970,(array([[5, 4]]), ['False', 'True'], ['False'])
-971,(array([[3, 4]]), ['False', 'True'], ['True'])
-972,(array([[5, 4]]), ['False', 'True'], ['False'])
-973,(array([[5, 4]]), ['False', 'True'], ['False'])
-974,(array([[5, 4]]), ['False', 'True'], ['False'])
-975,(array([[5, 4]]), ['False', 'True'], ['False'])
-976,(array([[3, 2]]), ['False', 'True'], ['False'])
-977,(array([[5, 4]]), ['False', 'True'], ['False'])
-978,(array([[3, 4]]), ['False', 'True'], ['True'])
-979,(array([[4, 5]]), ['False', 'True'], ['True'])
-980,(array([[4, 5]]), ['False', 'True'], ['True'])
-981,(array([[4, 5]]), ['False', 'True'], ['True'])
-982,(array([[5, 4]]), ['False', 'True'], ['False'])
-983,(array([[5, 4]]), ['False', 'True'], ['False'])
-984,(array([[4, 5]]), ['False', 'True'], ['True'])
-985,(array([[5, 4]]), ['False', 'True'], ['False'])
-986,(array([[4, 5]]), ['False', 'True'], ['True'])
-987,(array([[5, 4]]), ['False', 'True'], ['False'])
-988,(array([[4, 5]]), ['False', 'True'], ['True'])
-989,(array([[5, 4]]), ['False', 'True'], ['False'])
-990,(array([[5, 4]]), ['False', 'True'], ['False'])
-991,(array([[5, 4]]), ['False', 'True'], ['False'])
-992,(array([[4, 5]]), ['False', 'True'], ['True'])
-993,(array([[5, 4]]), ['False', 'True'], ['False'])
-994,(array([[5, 4]]), ['False', 'True'], ['False'])
-995,(array([[5, 4]]), ['False', 'True'], ['False'])
-996,(array([[4, 5]]), ['False', 'True'], ['True'])
-997,(array([[5, 4]]), ['False', 'True'], ['False'])
-998,(array([[5, 4]]), ['False', 'True'], ['False'])
-999,(array([[5, 4]]), ['False', 'True'], ['False'])
-1000,(array([[5, 4]]), ['False', 'True'], ['False'])
-1001,(array([[5, 4]]), ['False', 'True'], ['False'])
-1002,(array([[4, 5]]), ['False', 'True'], ['True'])
-1003,(array([[4, 5]]), ['False', 'True'], ['True'])
-1004,(array([[4, 5]]), ['False', 'True'], ['True'])
-1005,(array([[3, 5]]), ['False', 'True'], ['True'])
-1006,(array([[4, 5]]), ['False', 'True'], ['True'])
-1007,(array([[5, 4]]), ['False', 'True'], ['False'])
-1008,(array([[5, 4]]), ['False', 'True'], ['False'])
-1009,(array([[5, 4]]), ['False', 'True'], ['False'])
-1010,(array([[5, 4]]), ['False', 'True'], ['False'])
-1011,(array([[4, 5]]), ['False', 'True'], ['True'])
-1012,(array([[4, 5]]), ['False', 'True'], ['True'])
-1013,(array([[5, 4]]), ['False', 'True'], ['False'])
-1014,(array([[4, 5]]), ['False', 'True'], ['True'])
-1015,(array([[5, 4]]), ['False', 'True'], ['False'])
-1016,(array([[5, 4]]), ['False', 'True'], ['False'])
-1017,(array([[4, 5]]), ['False', 'True'], ['True'])
-1018,(array([[5, 4]]), ['False', 'True'], ['False'])
-1019,(array([[4, 5]]), ['False', 'True'], ['True'])
-1020,(array([[5, 4]]), ['False', 'True'], ['False'])
-1021,(array([[5, 4]]), ['False', 'True'], ['False'])
-1022,(array([[5, 4]]), ['False', 'True'], ['False'])
-1023,(array([[5, 4]]), ['False', 'True'], ['False'])
-1024,(array([[5, 4]]), ['False', 'True'], ['False'])
-1025,(array([[5, 4]]), ['False', 'True'], ['False'])
-1026,(array([[5, 4]]), ['False', 'True'], ['False'])
-1027,(array([[5, 4]]), ['False', 'True'], ['False'])
-1028,(array([[5, 4]]), ['False', 'True'], ['False'])
-1029,(array([[5, 4]]), ['False', 'True'], ['False'])
-1030,(array([[5, 4]]), ['False', 'True'], ['False'])
-1031,(array([[5, 4]]), ['False', 'True'], ['False'])
-1032,(array([[4, 5]]), ['False', 'True'], ['True'])
-1033,(array([[4, 5]]), ['False', 'True'], ['True'])
-1034,(array([[5, 4]]), ['False', 'True'], ['False'])
-1035,(array([[5, 4]]), ['False', 'True'], ['False'])
-1036,(array([[5, 4]]), ['False', 'True'], ['False'])
-1037,(array([[5, 4]]), ['False', 'True'], ['False'])
-1038,(array([[5, 4]]), ['False', 'True'], ['False'])
-1039,(array([[5, 4]]), ['False', 'True'], ['False'])
-1040,(array([[5, 4]]), ['False', 'True'], ['False'])
-1041,(array([[5, 4]]), ['False', 'True'], ['False'])
-1042,(array([[4, 5]]), ['False', 'True'], ['True'])
-1043,(array([[5, 4]]), ['False', 'True'], ['False'])
-1044,(array([[5, 4]]), ['False', 'True'], ['False'])
-1045,(array([[4, 5]]), ['False', 'True'], ['True'])
-1046,(array([[5, 4]]), ['False', 'True'], ['False'])
-1047,(array([[5, 4]]), ['False', 'True'], ['False'])
-1048,(array([[4, 5]]), ['False', 'True'], ['True'])
-1049,(array([[5, 4]]), ['False', 'True'], ['False'])
-1050,(array([[5, 4]]), ['False', 'True'], ['False'])
-1051,(array([[5, 4]]), ['False', 'True'], ['False'])
-1052,(array([[4, 5]]), ['False', 'True'], ['True'])
-1053,(array([[5, 4]]), ['False', 'True'], ['False'])
-1054,(array([[4, 5]]), ['False', 'True'], ['True'])
-1055,(array([[5, 4]]), ['False', 'True'], ['False'])
-1056,(array([[5, 4]]), ['False', 'True'], ['False'])
-1057,(array([[5, 4]]), ['False', 'True'], ['False'])
-1058,(array([[4, 5]]), ['False', 'True'], ['True'])
-1059,(array([[5, 4]]), ['False', 'True'], ['False'])
-1060,(array([[4, 5]]), ['False', 'True'], ['True'])
-1061,(array([[5, 4]]), ['False', 'True'], ['False'])
-1062,(array([[5, 4]]), ['False', 'True'], ['False'])
-1063,(array([[5, 4]]), ['False', 'True'], ['False'])
-1064,(array([[5, 4]]), ['False', 'True'], ['False'])
-1065,(array([[5, 4]]), ['False', 'True'], ['False'])
-1066,(array([[5, 4]]), ['False', 'True'], ['False'])
-1067,(array([[4, 5]]), ['False', 'True'], ['True'])
-1068,(array([[4, 5]]), ['False', 'True'], ['True'])
-1069,(array([[5, 4]]), ['False', 'True'], ['False'])
-1070,(array([[4, 5]]), ['False', 'True'], ['True'])
-1071,(array([[4, 5]]), ['False', 'True'], ['True'])
-1072,(array([[5, 4]]), ['False', 'True'], ['False'])
-1073,(array([[5, 4]]), ['False', 'True'], ['False'])
-1074,(array([[4, 5]]), ['False', 'True'], ['True'])
-1075,(array([[5, 4]]), ['False', 'True'], ['False'])
-1076,(array([[4, 5]]), ['False', 'True'], ['True'])
-1077,(array([[5, 4]]), ['False', 'True'], ['False'])
-1078,(array([[4, 5]]), ['False', 'True'], ['True'])
-1079,(array([[5, 4]]), ['False', 'True'], ['False'])
-1080,(array([[5, 4]]), ['False', 'True'], ['False'])
-1081,(array([[5, 4]]), ['False', 'True'], ['False'])
-1082,(array([[5, 4]]), ['False', 'True'], ['False'])
-1083,(array([[5, 4]]), ['False', 'True'], ['False'])
-1084,(array([[5, 4]]), ['False', 'True'], ['False'])
-1085,(array([[5, 2]]), ['False', 'True'], ['False'])
-1086,(array([[4, 5]]), ['False', 'True'], ['True'])
-1087,(array([[5, 4]]), ['False', 'True'], ['False'])
-1088,(array([[4, 5]]), ['False', 'True'], ['True'])
-1089,(array([[4, 5]]), ['False', 'True'], ['True'])
-1090,(array([[5, 4]]), ['False', 'True'], ['False'])
-1091,(array([[5, 4]]), ['False', 'True'], ['False'])
-1092,(array([[4, 5]]), ['False', 'True'], ['True'])
-1093,(array([[5, 4]]), ['False', 'True'], ['False'])
-1094,(array([[4, 5]]), ['False', 'True'], ['True'])
-1095,(array([[4, 5]]), ['False', 'True'], ['True'])
-1096,(array([[5, 4]]), ['False', 'True'], ['False'])
-1097,(array([[4, 5]]), ['False', 'True'], ['True'])
-1098,(array([[5, 4]]), ['False', 'True'], ['False'])
-1099,(array([[5, 4]]), ['False', 'True'], ['False'])
-1100,(array([[4, 5]]), ['False', 'True'], ['True'])
-1101,(array([[5, 4]]), ['False', 'True'], ['False'])
-1102,(array([[5, 4]]), ['False', 'True'], ['False'])
-1103,(array([[5, 4]]), ['False', 'True'], ['False'])
-1104,(array([[5, 4]]), ['False', 'True'], ['False'])
-1105,(array([[4, 5]]), ['False', 'True'], ['True'])
-1106,(array([[4, 5]]), ['False', 'True'], ['True'])
-1107,(array([[5, 4]]), ['False', 'True'], ['False'])
-1108,(array([[4, 5]]), ['False', 'True'], ['True'])
-1109,(array([[5, 4]]), ['False', 'True'], ['False'])
-1110,(array([[4, 5]]), ['False', 'True'], ['True'])
-1111,(array([[5, 4]]), ['False', 'True'], ['False'])
-1112,(array([[4, 5]]), ['False', 'True'], ['True'])
-1113,(array([[5, 4]]), ['False', 'True'], ['False'])
-1114,(array([[4, 5]]), ['False', 'True'], ['True'])
-1115,(array([[5, 4]]), ['False', 'True'], ['False'])
-1116,(array([[4, 5]]), ['False', 'True'], ['True'])
-1117,(array([[4, 5]]), ['False', 'True'], ['True'])
-1118,(array([[5, 4]]), ['False', 'True'], ['False'])
-1119,(array([[4, 5]]), ['False', 'True'], ['True'])
-1120,(array([[5, 4]]), ['False', 'True'], ['False'])
-1121,(array([[5, 4]]), ['False', 'True'], ['False'])
-1122,(array([[5, 4]]), ['False', 'True'], ['False'])
-1123,(array([[4, 5]]), ['False', 'True'], ['True'])
-1124,(array([[5, 4]]), ['False', 'True'], ['False'])
-1125,(array([[5, 4]]), ['False', 'True'], ['False'])
-1126,(array([[5, 4]]), ['False', 'True'], ['False'])
-1127,(array([[5, 4]]), ['False', 'True'], ['False'])
-1128,(array([[5, 4]]), ['False', 'True'], ['False'])
-1129,(array([[5, 4]]), ['False', 'True'], ['False'])
-1130,(array([[4, 5]]), ['False', 'True'], ['True'])
-1131,(array([[4, 5]]), ['False', 'True'], ['True'])
-1132,(array([[4, 5]]), ['False', 'True'], ['True'])
-1133,(array([[4, 5]]), ['False', 'True'], ['True'])
-1134,(array([[4, 5]]), ['False', 'True'], ['True'])
-1135,(array([[5, 4]]), ['False', 'True'], ['False'])
-1136,(array([[5, 4]]), ['False', 'True'], ['False'])
-1137,(array([[5, 4]]), ['False', 'True'], ['False'])
-1138,(array([[4, 5]]), ['False', 'True'], ['True'])
-1139,(array([[5, 4]]), ['False', 'True'], ['False'])
-1140,(array([[4, 5]]), ['False', 'True'], ['True'])
-1141,(array([[4, 5]]), ['False', 'True'], ['True'])
-1142,(array([[4, 5]]), ['False', 'True'], ['True'])
-1143,(array([[5, 4]]), ['False', 'True'], ['False'])
-1144,(array([[4, 5]]), ['False', 'True'], ['True'])
-1145,(array([[5, 4]]), ['False', 'True'], ['False'])
-1146,(array([[5, 4]]), ['False', 'True'], ['False'])
-1147,(array([[5, 4]]), ['False', 'True'], ['False'])
-1148,(array([[5, 4]]), ['False', 'True'], ['False'])
-1149,(array([[5, 4]]), ['False', 'True'], ['False'])
-1150,(array([[4, 5]]), ['False', 'True'], ['True'])
-1151,(array([[5, 4]]), ['False', 'True'], ['False'])
-1152,(array([[5, 4]]), ['False', 'True'], ['False'])
-1153,(array([[5, 4]]), ['False', 'True'], ['False'])
-1154,(array([[4, 5]]), ['False', 'True'], ['True'])
-1155,(array([[5, 4]]), ['False', 'True'], ['False'])
-1156,(array([[5, 4]]), ['False', 'True'], ['False'])
-1157,(array([[5, 4]]), ['False', 'True'], ['False'])
-1158,(array([[5, 4]]), ['False', 'True'], ['False'])
-1159,(array([[5, 4]]), ['False', 'True'], ['False'])
-1160,(array([[5, 4]]), ['False', 'True'], ['False'])
-1161,(array([[5, 4]]), ['False', 'True'], ['False'])
-1162,(array([[4, 5]]), ['False', 'True'], ['True'])
-1163,(array([[5, 4]]), ['False', 'True'], ['False'])
-1164,(array([[4, 5]]), ['False', 'True'], ['True'])
-1165,(array([[4, 5]]), ['False', 'True'], ['True'])
-1166,(array([[5, 4]]), ['False', 'True'], ['False'])
-1167,(array([[4, 5]]), ['False', 'True'], ['True'])
-1168,(array([[5, 4]]), ['False', 'True'], ['False'])
-1169,(array([[5, 4]]), ['False', 'True'], ['False'])
-1170,(array([[5, 4]]), ['False', 'True'], ['False'])
-1171,(array([[5, 4]]), ['False', 'True'], ['False'])
-1172,(array([[5, 4]]), ['False', 'True'], ['False'])
-1173,(array([[5, 4]]), ['False', 'True'], ['False'])
-1174,(array([[4, 5]]), ['False', 'True'], ['True'])
-1175,(array([[4, 5]]), ['False', 'True'], ['True'])
-1176,(array([[5, 4]]), ['False', 'True'], ['False'])
-1177,(array([[5, 4]]), ['False', 'True'], ['False'])
-1178,(array([[5, 4]]), ['False', 'True'], ['False'])
-1179,(array([[4, 5]]), ['False', 'True'], ['True'])
-1180,(array([[5, 4]]), ['False', 'True'], ['False'])
-1181,(array([[5, 4]]), ['False', 'True'], ['False'])
-1182,(array([[5, 4]]), ['False', 'True'], ['False'])
-1183,(array([[5, 4]]), ['False', 'True'], ['False'])
-1184,(array([[5, 4]]), ['False', 'True'], ['False'])
-1185,(array([[5, 4]]), ['False', 'True'], ['False'])
-1186,(array([[5, 4]]), ['False', 'True'], ['False'])
-1187,(array([[5, 4]]), ['False', 'True'], ['False'])
-1188,(array([[4, 5]]), ['False', 'True'], ['True'])
-1189,(array([[5, 4]]), ['False', 'True'], ['False'])
-1190,(array([[4, 5]]), ['False', 'True'], ['True'])
-1191,(array([[5, 4]]), ['False', 'True'], ['False'])
-1192,(array([[5, 4]]), ['False', 'True'], ['False'])
-1193,(array([[4, 5]]), ['False', 'True'], ['True'])
-1194,(array([[5, 4]]), ['False', 'True'], ['False'])
-1195,(array([[5, 4]]), ['False', 'True'], ['False'])
-1196,(array([[4, 5]]), ['False', 'True'], ['True'])
-1197,(array([[4, 5]]), ['False', 'True'], ['True'])
-1198,(array([[4, 5]]), ['False', 'True'], ['True'])
-1199,(array([[5, 4]]), ['False', 'True'], ['False'])
-1200,(array([[5, 4]]), ['False', 'True'], ['False'])
-1201,(array([[5, 4]]), ['False', 'True'], ['False'])
-1202,(array([[5, 4]]), ['False', 'True'], ['False'])
-1203,(array([[5, 4]]), ['False', 'True'], ['False'])
-1204,(array([[5, 4]]), ['False', 'True'], ['False'])
-1205,(array([[5, 4]]), ['False', 'True'], ['False'])
-1206,(array([[4, 5]]), ['False', 'True'], ['True'])
-1207,(array([[3, 5]]), ['False', 'True'], ['True'])
-1208,(array([[5, 4]]), ['False', 'True'], ['False'])
-1209,(array([[5, 4]]), ['False', 'True'], ['False'])
-1210,(array([[5, 4]]), ['False', 'True'], ['False'])
-1211,(array([[5, 4]]), ['False', 'True'], ['False'])
-1212,(array([[5, 4]]), ['False', 'True'], ['False'])
-1213,(array([[5, 4]]), ['False', 'True'], ['False'])
-1214,(array([[5, 4]]), ['False', 'True'], ['False'])
-1215,(array([[4, 5]]), ['False', 'True'], ['True'])
-1216,(array([[4, 5]]), ['False', 'True'], ['True'])
-1217,(array([[5, 4]]), ['False', 'True'], ['False'])
-1218,(array([[4, 5]]), ['False', 'True'], ['True'])
-1219,(array([[4, 5]]), ['False', 'True'], ['True'])
-1220,(array([[5, 4]]), ['False', 'True'], ['False'])
-1221,(array([[5, 4]]), ['False', 'True'], ['False'])
-1222,(array([[4, 5]]), ['False', 'True'], ['True'])
-1223,(array([[5, 4]]), ['False', 'True'], ['False'])
-1224,(array([[5, 4]]), ['False', 'True'], ['False'])
-1225,(array([[4, 5]]), ['False', 'True'], ['True'])
-1226,(array([[5, 4]]), ['False', 'True'], ['False'])
-1227,(array([[4, 5]]), ['False', 'True'], ['True'])
-1228,(array([[5, 4]]), ['False', 'True'], ['False'])
-1229,(array([[5, 4]]), ['False', 'True'], ['False'])
-1230,(array([[5, 4]]), ['False', 'True'], ['False'])
-1231,(array([[5, 4]]), ['False', 'True'], ['False'])
-1232,(array([[5, 4]]), ['False', 'True'], ['False'])
-1233,(array([[5, 4]]), ['False', 'True'], ['False'])
-1234,(array([[5, 4]]), ['False', 'True'], ['False'])
-1235,(array([[4, 5]]), ['False', 'True'], ['True'])
-1236,(array([[5, 4]]), ['False', 'True'], ['False'])
-1237,(array([[4, 5]]), ['False', 'True'], ['True'])
-1238,(array([[5, 4]]), ['False', 'True'], ['False'])
-1239,(array([[4, 5]]), ['False', 'True'], ['True'])
-1240,(array([[5, 4]]), ['False', 'True'], ['False'])
-1241,(array([[4, 5]]), ['False', 'True'], ['True'])
-1242,(array([[4, 5]]), ['False', 'True'], ['True'])
-1243,(array([[5, 4]]), ['False', 'True'], ['False'])
-1244,(array([[5, 4]]), ['False', 'True'], ['False'])
-1245,(array([[5, 4]]), ['False', 'True'], ['False'])
-1246,(array([[5, 4]]), ['False', 'True'], ['False'])
-1247,(array([[5, 4]]), ['False', 'True'], ['False'])
-1248,(array([[4, 5]]), ['False', 'True'], ['True'])
-1249,(array([[5, 4]]), ['False', 'True'], ['False'])
-1250,(array([[5, 4]]), ['False', 'True'], ['False'])
-1251,(array([[4, 5]]), ['False', 'True'], ['True'])
-1252,(array([[5, 4]]), ['False', 'True'], ['False'])
-1253,(array([[4, 5]]), ['False', 'True'], ['True'])
-1254,(array([[4, 5]]), ['False', 'True'], ['True'])
-1255,(array([[5, 4]]), ['False', 'True'], ['False'])
-1256,(array([[4, 5]]), ['False', 'True'], ['True'])
-1257,(array([[5, 4]]), ['False', 'True'], ['False'])
-1258,(array([[5, 4]]), ['False', 'True'], ['False'])
-1259,(array([[5, 4]]), ['False', 'True'], ['False'])
-1260,(array([[4, 5]]), ['False', 'True'], ['True'])
-1261,(array([[5, 4]]), ['False', 'True'], ['False'])
-1262,(array([[5, 4]]), ['False', 'True'], ['False'])
-1263,(array([[4, 5]]), ['False', 'True'], ['True'])
-1264,(array([[5, 4]]), ['False', 'True'], ['False'])
-1265,(array([[5, 4]]), ['False', 'True'], ['False'])
-1266,(array([[4, 5]]), ['False', 'True'], ['True'])
-1267,(array([[4, 5]]), ['False', 'True'], ['True'])
-1268,(array([[5, 4]]), ['False', 'True'], ['False'])
-1269,(array([[5, 4]]), ['False', 'True'], ['False'])
-1270,(array([[5, 4]]), ['False', 'True'], ['False'])
-1271,(array([[5, 4]]), ['False', 'True'], ['False'])
-1272,(array([[5, 4]]), ['False', 'True'], ['False'])
-1273,(array([[5, 4]]), ['False', 'True'], ['False'])
-1274,(array([[5, 4]]), ['False', 'True'], ['False'])
-1275,(array([[4, 5]]), ['False', 'True'], ['True'])
-1276,(array([[4, 5]]), ['False', 'True'], ['True'])
-1277,(array([[4, 5]]), ['False', 'True'], ['True'])
-1278,(array([[5, 4]]), ['False', 'True'], ['False'])
-1279,(array([[5, 4]]), ['False', 'True'], ['False'])
-1280,(array([[5, 4]]), ['False', 'True'], ['False'])
-1281,(array([[5, 4]]), ['False', 'True'], ['False'])
-1282,(array([[4, 5]]), ['False', 'True'], ['True'])
-1283,(array([[4, 5]]), ['False', 'True'], ['True'])
-1284,(array([[5, 4]]), ['False', 'True'], ['False'])
-1285,(array([[5, 4]]), ['False', 'True'], ['False'])
-1286,(array([[5, 4]]), ['False', 'True'], ['False'])
-1287,(array([[4, 5]]), ['False', 'True'], ['True'])
-1288,(array([[5, 4]]), ['False', 'True'], ['False'])
-1289,(array([[4, 5]]), ['False', 'True'], ['True'])
-1290,(array([[5, 4]]), ['False', 'True'], ['False'])
-1291,(array([[5, 4]]), ['False', 'True'], ['False'])
-1292,(array([[4, 5]]), ['False', 'True'], ['True'])
-1293,(array([[5, 4]]), ['False', 'True'], ['False'])
-1294,(array([[4, 5]]), ['False', 'True'], ['True'])
-1295,(array([[4, 5]]), ['False', 'True'], ['True'])
-1296,(array([[4, 5]]), ['False', 'True'], ['True'])
-1297,(array([[5, 4]]), ['False', 'True'], ['False'])
-1298,(array([[5, 4]]), ['False', 'True'], ['False'])
-1299,(array([[5, 4]]), ['False', 'True'], ['False'])
-1300,(array([[4, 5]]), ['False', 'True'], ['True'])
-1301,(array([[5, 4]]), ['False', 'True'], ['False'])
-1302,(array([[4, 5]]), ['False', 'True'], ['True'])
-1303,(array([[4, 5]]), ['False', 'True'], ['True'])
-1304,(array([[5, 4]]), ['False', 'True'], ['False'])
-1305,(array([[5, 4]]), ['False', 'True'], ['False'])
-1306,(array([[4, 5]]), ['False', 'True'], ['True'])
-1307,(array([[5, 4]]), ['False', 'True'], ['False'])
-1308,(array([[5, 4]]), ['False', 'True'], ['False'])
-1309,(array([[5, 4]]), ['False', 'True'], ['False'])
+892,['False']
+893,['False']
+894,['False']
+895,['False']
+896,['False']
+897,['False']
+898,['True']
+899,['False']
+900,['True']
+901,['False']
+902,['False']
+903,['False']
+904,['True']
+905,['False']
+906,['True']
+907,['True']
+908,['False']
+909,['False']
+910,['False']
+911,['True']
+912,['False']
+913,['False']
+914,['False']
+915,['True']
+916,['True']
+917,['False']
+918,['True']
+919,['False']
+920,['False']
+921,['False']
+922,['False']
+923,['False']
+924,['False']
+925,['False']
+926,['True']
+927,['False']
+928,['False']
+929,['False']
+930,['False']
+931,['False']
+932,['False']
+933,['True']
+934,['False']
+935,['True']
+936,['True']
+937,['False']
+938,['False']
+939,['False']
+940,['True']
+941,['False']
+942,['True']
+943,['False']
+944,['True']
+945,['True']
+946,['False']
+947,['False']
+948,['False']
+949,['True']
+950,['False']
+951,['True']
+952,['False']
+953,['False']
+954,['False']
+955,['False']
+956,['True']
+957,['True']
+958,['True']
+959,['False']
+960,['True']
+961,['True']
+962,['False']
+963,['False']
+964,['False']
+965,['True']
+966,['True']
+967,['True']
+968,['False']
+969,['True']
+970,['False']
+971,['False']
+972,['False']
+973,['False']
+974,['False']
+975,['False']
+976,['False']
+977,['False']
+978,['False']
+979,['False']
+980,['True']
+981,['True']
+982,['False']
+983,['False']
+984,['True']
+985,['False']
+986,['True']
+987,['False']
+988,['True']
+989,['False']
+990,['False']
+991,['False']
+992,['True']
+993,['False']
+994,['False']
+995,['False']
+996,['True']
+997,['False']
+998,['False']
+999,['False']
+1000,['False']
+1001,['False']
+1002,['False']
+1003,['True']
+1004,['True']
+1005,['True']
+1006,['True']
+1007,['False']
+1008,['False']
+1009,['True']
+1010,['True']
+1011,['True']
+1012,['True']
+1013,['False']
+1014,['True']
+1015,['False']
+1016,['False']
+1017,['False']
+1018,['False']
+1019,['True']
+1020,['False']
+1021,['False']
+1022,['False']
+1023,['False']
+1024,['False']
+1025,['False']
+1026,['False']
+1027,['False']
+1028,['False']
+1029,['False']
+1030,['False']
+1031,['False']
+1032,['False']
+1033,['True']
+1034,['False']
+1035,['False']
+1036,['False']
+1037,['False']
+1038,['True']
+1039,['False']
+1040,['False']
+1041,['False']
+1042,['True']
+1043,['False']
+1044,['False']
+1045,['False']
+1046,['False']
+1047,['False']
+1048,['True']
+1049,['False']
+1050,['False']
+1051,['False']
+1052,['True']
+1053,['False']
+1054,['True']
+1055,['False']
+1056,['False']
+1057,['False']
+1058,['False']
+1059,['False']
+1060,['True']
+1061,['False']
+1062,['False']
+1063,['False']
+1064,['False']
+1065,['False']
+1066,['False']
+1067,['True']
+1068,['True']
+1069,['False']
+1070,['True']
+1071,['True']
+1072,['False']
+1073,['True']
+1074,['True']
+1075,['False']
+1076,['True']
+1077,['False']
+1078,['True']
+1079,['False']
+1080,['False']
+1081,['False']
+1082,['False']
+1083,['False']
+1084,['False']
+1085,['False']
+1086,['False']
+1087,['False']
+1088,['True']
+1089,['False']
+1090,['False']
+1091,['False']
+1092,['True']
+1093,['False']
+1094,['False']
+1095,['True']
+1096,['False']
+1097,['False']
+1098,['True']
+1099,['False']
+1100,['True']
+1101,['False']
+1102,['False']
+1103,['False']
+1104,['False']
+1105,['True']
+1106,['False']
+1107,['False']
+1108,['True']
+1109,['False']
+1110,['True']
+1111,['False']
+1112,['True']
+1113,['False']
+1114,['True']
+1115,['False']
+1116,['True']
+1117,['True']
+1118,['False']
+1119,['True']
+1120,['False']
+1121,['False']
+1122,['False']
+1123,['True']
+1124,['False']
+1125,['False']
+1126,['False']
+1127,['False']
+1128,['False']
+1129,['False']
+1130,['True']
+1131,['True']
+1132,['True']
+1133,['True']
+1134,['False']
+1135,['False']
+1136,['False']
+1137,['False']
+1138,['True']
+1139,['False']
+1140,['True']
+1141,['True']
+1142,['True']
+1143,['False']
+1144,['True']
+1145,['False']
+1146,['False']
+1147,['False']
+1148,['False']
+1149,['False']
+1150,['True']
+1151,['False']
+1152,['False']
+1153,['False']
+1154,['True']
+1155,['False']
+1156,['False']
+1157,['False']
+1158,['False']
+1159,['False']
+1160,['False']
+1161,['False']
+1162,['False']
+1163,['False']
+1164,['True']
+1165,['True']
+1166,['False']
+1167,['True']
+1168,['False']
+1169,['False']
+1170,['False']
+1171,['False']
+1172,['False']
+1173,['False']
+1174,['True']
+1175,['True']
+1176,['False']
+1177,['False']
+1178,['False']
+1179,['True']
+1180,['True']
+1181,['False']
+1182,['False']
+1183,['True']
+1184,['False']
+1185,['False']
+1186,['False']
+1187,['False']
+1188,['True']
+1189,['False']
+1190,['True']
+1191,['False']
+1192,['False']
+1193,['False']
+1194,['False']
+1195,['False']
+1196,['True']
+1197,['True']
+1198,['True']
+1199,['False']
+1200,['False']
+1201,['False']
+1202,['False']
+1203,['False']
+1204,['False']
+1205,['True']
+1206,['True']
+1207,['True']
+1208,['False']
+1209,['False']
+1210,['False']
+1211,['False']
+1212,['False']
+1213,['True']
+1214,['True']
+1215,['True']
+1216,['False']
+1217,['False']
+1218,['True']
+1219,['False']
+1220,['False']
+1221,['False']
+1222,['True']
+1223,['False']
+1224,['False']
+1225,['True']
+1226,['False']
+1227,['True']
+1228,['False']
+1229,['False']
+1230,['False']
+1231,['False']
+1232,['False']
+1233,['False']
+1234,['False']
+1235,['True']
+1236,['False']
+1237,['False']
+1238,['False']
+1239,['True']
+1240,['False']
+1241,['True']
+1242,['True']
+1243,['False']
+1244,['False']
+1245,['False']
+1246,['False']
+1247,['False']
+1248,['True']
+1249,['False']
+1250,['False']
+1251,['False']
+1252,['False']
+1253,['True']
+1254,['True']
+1255,['False']
+1256,['True']
+1257,['False']
+1258,['False']
+1259,['False']
+1260,['True']
+1261,['False']
+1262,['False']
+1263,['True']
+1264,['False']
+1265,['False']
+1266,['True']
+1267,['True']
+1268,['False']
+1269,['False']
+1270,['False']
+1271,['False']
+1272,['False']
+1273,['False']
+1274,['False']
+1275,['False']
+1276,['False']
+1277,['True']
+1278,['False']
+1279,['False']
+1280,['False']
+1281,['False']
+1282,['True']
+1283,['True']
+1284,['False']
+1285,['False']
+1286,['False']
+1287,['True']
+1288,['False']
+1289,['True']
+1290,['False']
+1291,['False']
+1292,['True']
+1293,['False']
+1294,['True']
+1295,['False']
+1296,['False']
+1297,['True']
+1298,['False']
+1299,['False']
+1300,['True']
+1301,['False']
+1302,['True']
+1303,['True']
+1304,['False']
+1305,['False']
+1306,['True']
+1307,['False']
+1308,['False']
+1309,['False']

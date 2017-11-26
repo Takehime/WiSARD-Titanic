@@ -19,7 +19,7 @@ def generate_test_prediction(num_bits_addr):
 
     output = "PassengerId,Survived\n"
     for i in range(0, len(binary)):
-        prediction = w.predict([binary[i]])
+        prediction = w.predict([binary[i]])[2]
         output = output + str(passengers[i].p_id) + "," + str(prediction) + "\n"
         # if str(prediction[0]) == "True":
         #     output = output + str(passengers[i].p_id) + "," + "1\n"
@@ -50,7 +50,7 @@ def local_test(num_bits, thorough_test):
 
     for i in range(int(0.8*len(binary)), len(binary) - 1):
         tries = tries + 1
-        prediction = w.predict([binary[i]])
+        prediction = w.predict([binary[i]])[2]
         if str(prediction[0]) == str(result[i]):
             successes = successes + 1
 
@@ -144,6 +144,7 @@ def cluswisard(nba, growth, score):
     for i in range(0, len(binary)):
         score, classes, result = w.predict([binary[i]])
         # prediction = w.predict([binary[i]])
+        d_size[str(result[0])] += 1
         if "True" in str(result[0]):
             output = output + str(passengers[i].p_id) + "," + "1\n"
         else:
@@ -152,7 +153,7 @@ def cluswisard(nba, growth, score):
     f = open('Resources/result.csv','w')
     f.write(output)
     f.close()
-    # print d_size
+    print d_size
 
     print("====================")        
     print("Done.")
@@ -209,7 +210,7 @@ def local_test_cross_validation(num_bits, k_folds, fold_to_test):
     w = wi.WiSARD(num_bits_addr)
     w.fit(X, y)
 
-    prediction = w.predict(folds_x[fold_to_test])
+    prediction = w.predict(folds_x[fold_to_test])[2]
     for j in range(0, len(prediction)):
         tries = tries + 1
         if str(prediction[j]) == str(folds_y[fold_to_test][j]):
