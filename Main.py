@@ -3,10 +3,10 @@ import numpy as np
 import Reader as r
 import sys
 
-def generate_test_prediction(num_bits_addr):
+def generate_test_prediction(num_bits_addr, gen=[6, 12, 34, 36, 78]):
     X = []
     y = []
-    binary, result = r.get_binary_passengers('Resources/train.csv', [5, 15, 26, 37, 80])
+    binary, result = r.get_binary_passengers('Resources/train.csv', gen)
 
     for i in range(0, len(binary) - 1):
         X.append(binary[i])
@@ -15,12 +15,12 @@ def generate_test_prediction(num_bits_addr):
     w = wi.WiSARD(num_bits_addr)
     w.fit(X, y)
 
-    binary, result = r.get_binary_passengers('Resources/test.csv', [5, 15, 26, 37, 80])
+    binary, result = r.get_binary_passengers('Resources/test.csv', gen)
     passengers, res = r.get_passengers('Resources/test.csv')
 
     output = "PassengerId,Survived\n"
     for i in range(0, len(binary)):
-        prediction = w.predict([binary[i]])
+        prediction = w.predict([binary[i]])[2]
         if str(prediction[0]) == "True":
             output = output + str(passengers[i].p_id) + "," + "1\n"
         else:
@@ -34,7 +34,7 @@ def generate_test_prediction(num_bits_addr):
     print("Done.")
     print("====================")        
 
-def local_test(num_bits, thorough_test, gen):
+def local_test(num_bits, thorough_test, gen=[8, 12, 30, 34, 80]):
     num_bits_addr = num_bits
     successes = 0
     tries = 0
@@ -50,7 +50,7 @@ def local_test(num_bits, thorough_test, gen):
 
     for i in range(int(0.8*len(binary)), len(binary) - 1):
         tries = tries + 1
-        prediction = w.predict([binary[i]])
+        prediction = w.predict([binary[i]])[2]
         if str(prediction[0]) == str(result[i]):
             successes = successes + 1
 
@@ -66,7 +66,7 @@ def local_test(num_bits, thorough_test, gen):
 
     return successes * 100 / float(tries)
 
-def local_test_cross_validation(num_bits, k_folds, gen):
+def local_test_cross_validation(num_bits, k_folds, gen=[6, 12, 34, 36, 78]):
     total_tries = 0
     total_successes = 0
     for i in range(0, k_folds):
@@ -81,7 +81,7 @@ def local_test_cross_validation(num_bits, k_folds, gen):
     print("====================")
     return accuracy
 
-def local_test_cross_validation_fold_test(num_bits, k_folds, fold_to_test, gen):
+def local_test_cross_validation_fold_test(num_bits, k_folds, fold_to_test, gen=[6, 12, 34, 36, 78]):
     num_bits_addr = num_bits
     successes = 0
     tries = 0
@@ -132,7 +132,7 @@ def local_test_cross_validation_fold_test(num_bits, k_folds, fold_to_test, gen):
     w = wi.WiSARD(num_bits_addr)
     w.fit(X, y)
 
-    prediction = w.predict(folds_x[fold_to_test])
+    prediction = w.predict(folds_x[fold_to_test])[2]
     for j in range(0, len(prediction)):
         tries = tries + 1
         if str(prediction[j]) == str(folds_y[fold_to_test][j]):
@@ -168,14 +168,14 @@ if __name__ == "__main__":
         print_usage()
         sys.exit(0)
     if str(sys.argv[1]) == "T":
-        local_test(20, False, [5, 15, 26, 37, 80])
+        local_test(20, False)
     elif str(sys.argv[1]) == "C":
         num_bits = int(sys.argv[2])
         k_folds = int(sys.argv[3])
-        local_test_cross_validation(num_bits, k_folds, [5, 15, 26, 37, 80])
+        local_test_cross_validation(num_bits, k_folds)
     elif str(sys.argv[1]) == "T*":
-        for i in range(1, 20):
-            local_test(i, True, [5, 15, 26, 37, 80])
+        for i in range(1, 50):
+            local_test(i, True)
     elif str(sys.argv[1]) == "G":
         if len(sys.argv) < 3:
             print_usage()

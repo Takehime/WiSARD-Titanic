@@ -8,7 +8,7 @@ best_gen = list(gen)
 for i in range(0, 500):
     while True:
         random_index = randint(0, 4)
-        modifier = randint(-5, 5)
+        modifier = randint(-10, 10)
         valid = True
         gen = list(best_gen)
 
