@@ -3,7 +3,7 @@ import numpy as np
 import Reader as r
 import sys
 
-key = [4, 0, 1, 0, 0, 1, 1, 0, 1]
+key = [17, 1, 1, 6, 6, 1, 3, 2, 3]
 
 def generate_test_prediction(num_bits_addr):
     global key
@@ -18,13 +18,13 @@ def generate_test_prediction(num_bits_addr):
         y.append(str(result[i]))
     w.fit(X, y)
 
-    binary, result = r.get_binary_passengers('Resources/test.csv')
+    binary, result = r.get_binary_passengers('Resources/test.csv', key)
     passengers, res = r.get_passengers('Resources/test.csv')
 
     output = "PassengerId,Survived\n"
     for i in range(0, len(binary)):
-        prediction = w.predict([binary[i]])
-        if str(prediction[0]) == "True":
+        prediction = str(w.predict([binary[i]])[2][0])
+        if str(prediction) == "True":
             output = output + str(passengers[i].p_id) + "," + "1\n"
         else:
             output = output + str(passengers[i].p_id) + "," + "0\n"
@@ -54,7 +54,7 @@ def local_test(num_bits, thorough_test):
 
     for i in range(int(0.8*len(binary)), len(binary) - 1):
         tries = tries + 1
-        prediction = w.predict([binary[i]])
+        prediction = w.predict([binary[i]])[2]
         if str(prediction[0]) == str(result[i]):
             successes = successes + 1
 
@@ -212,16 +212,27 @@ def local_test_cross_validation(num_bits, k_folds, fold_to_test):
             X.extend(folds_x[i])
             y.extend(folds_y[i])
 
-    w = wi.WiSARD(num_bits_addr)
+    w = wi.WiSARD(key[0])
     w.fit(X, y)
 
-    prediction = w.predict(folds_x[fold_to_test])
+    output = {"pT_cF": 0, "pT_cT": 0, "pF_cF": 0, "pF_cT": 0}
+
+    prediction = w.predict(folds_x[fold_to_test])[2]
     for j in range(0, len(prediction)):
         tries = tries + 1
+        if str(prediction[j]) == "True" and str(folds_y[fold_to_test][j]) == "True":
+            output["pT_cT"] += 1
+        elif str(prediction[j]) == "True" and str(folds_y[fold_to_test][j]) == "False":
+            output["pT_cF"] += 1
+        elif str(prediction[j]) == "False" and str(folds_y[fold_to_test][j]) == "False":
+            output["pF_cF"] += 1
+        elif str(prediction[j]) == "False" and str(folds_y[fold_to_test][j]) == "True":
+            output["pF_cT"] += 1
+
         if str(prediction[j]) == str(folds_y[fold_to_test][j]):
             successes = successes + 1
         
-    return tries, successes
+    return tries, successes, output
 
 def print_usage():
     print("Usage: Main.py [T | G]")
@@ -250,22 +261,31 @@ if __name__ == "__main__":
         print("Wrong number of arguments.")
         print_usage()
         sys.exit(0)
-    if str(sys.argv[1]) == "T":
-        local_test(20, False)
-    if str(sys.argv[1]) == "CW":
+    elif str(sys.argv[1]) == "T":
+        local_test(int(sys.argv[2]), False)
+    elif str(sys.argv[1]) == "CW":
         cluswisard(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
     elif str(sys.argv[1]) == "C":
         k_folds = int(sys.argv[2])
         total_tries = 0
         total_successes = 0
+        output = {"pT_cF": 0, "pT_cT": 0, "pF_cF": 0, "pF_cT": 0}
         for i in range(0, k_folds):
-            tries, successes = local_test_cross_validation(8, k_folds, i)
+            tries, successes, op = local_test_cross_validation(8, k_folds, i)
             total_tries = total_tries + tries
             total_successes = total_successes + successes
+            output["pT_cT"] += op["pT_cT"]
+            output["pF_cF"] += op["pF_cF"]
+            output["pF_cT"] += op["pF_cT"]
+            output["pT_cF"] += op["pT_cF"]
+
         print("====================")        
         print("Tries: " + str(total_tries))        
         print("Successes: " + str(total_successes))        
-        print("Accuracy: " + str(total_successes * 100 / float(total_tries)) + "%")        
+        print("Accuracy: " + str(total_successes * 100 / float(total_tries)) + "%")
+        print output        
+        print("Dos nao-sobreviventes, " + str((output["pF_cF"])  * 100 / float(output["pT_cF"] + output["pF_cF"])) + "% foram corretamente classificados")
+        print("Dos sobreviventes, " + str((output["pT_cT"])  * 100 / float(output["pT_cT"] + output["pF_cT"])) + "% foram corretamente classificados")
         print("====================")
     elif str(sys.argv[1]) == "T*":
         for i in range(1, 20):
