@@ -3,12 +3,16 @@ import numpy as np
 import Reader as r
 import sys
 
+key = [4, 0, 1, 0, 0, 1, 1, 0, 1]
+
 def generate_test_prediction(num_bits_addr):
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    global key
+
+    binary, result = r.get_binary_passengers('Resources/train.csv', key)
     
     X = []
     y = []
-    w = wi.WiSARD(num_bits_addr)
+    w = wi.WiSARD(key[0])
     for i in range(0, len(binary) - 1):
         X.append(binary[i])
         y.append(str(result[i]))
@@ -19,14 +23,13 @@ def generate_test_prediction(num_bits_addr):
 
     output = "PassengerId,Survived\n"
     for i in range(0, len(binary)):
-        prediction = w.predict([binary[i]])[2]
-        output = output + str(passengers[i].p_id) + "," + str(prediction) + "\n"
-        # if str(prediction[0]) == "True":
-        #     output = output + str(passengers[i].p_id) + "," + "1\n"
-        # else:
-        #     output = output + str(passengers[i].p_id) + "," + "0\n"
+        prediction = w.predict([binary[i]])
+        if str(prediction[0]) == "True":
+            output = output + str(passengers[i].p_id) + "," + "1\n"
+        else:
+            output = output + str(passengers[i].p_id) + "," + "0\n"
 
-    f = open('Resources/result2.csv','w')
+    f = open('Resources/result.csv','w')
     f.write(output)
     f.close()
 
@@ -35,12 +38,13 @@ def generate_test_prediction(num_bits_addr):
     print("====================")        
 
 def local_test(num_bits, thorough_test):
-    num_bits_addr = num_bits
+    global key
+    num_bits_addr = key[0]
     successes = 0
     tries = 0
     X = []
     y = []
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    binary, result = r.get_binary_passengers('Resources/train.csv', key)
 
     for i in range(0, int(0.8*len(binary))):
         X.append(binary[i])
@@ -50,7 +54,7 @@ def local_test(num_bits, thorough_test):
 
     for i in range(int(0.8*len(binary)), len(binary) - 1):
         tries = tries + 1
-        prediction = w.predict([binary[i]])[2]
+        prediction = w.predict([binary[i]])
         if str(prediction[0]) == str(result[i]):
             successes = successes + 1
 
@@ -160,13 +164,14 @@ def cluswisard(nba, growth, score):
     print("====================")  
 
 def local_test_cross_validation(num_bits, k_folds, fold_to_test):
-    num_bits_addr = num_bits
+    global key
+    num_bits_addr = key[0]
     successes = 0
     tries = 0
     X = []
     y = []
     passengers, res = r.get_passengers('Resources/train.csv')
-    binary, result = r.get_binary_passengers('Resources/train.csv')
+    binary, result = r.get_binary_passengers('Resources/train.csv', key)
 
     fold_size = int(len(binary) / k_folds)
 
@@ -210,7 +215,7 @@ def local_test_cross_validation(num_bits, k_folds, fold_to_test):
     w = wi.WiSARD(num_bits_addr)
     w.fit(X, y)
 
-    prediction = w.predict(folds_x[fold_to_test])[2]
+    prediction = w.predict(folds_x[fold_to_test])
     for j in range(0, len(prediction)):
         tries = tries + 1
         if str(prediction[j]) == str(folds_y[fold_to_test][j]):

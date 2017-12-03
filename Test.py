@@ -1,52 +1,62 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from PyWANN import WiSARD as wi
+import Reader as r
+import numpy as np
+import sys
 
-X = [ [0, 1, 0, 0, 0, 0, 0, 0],
-       [0, 0, 1, 1, 1, 1, 0, 0],
-       [0, 0, 1, 0, 0, 0, 1, 0],
-       [1, 0, 0, 0, 0, 0, 0, 1],
-       [1, 1, 0, 1, 1, 1, 1, 1],
-       [1, 0, 0, 0, 0, 0, 0, 0],
-       [0, 0, 0, 0, 1, 0, 0, 1],
-       [1, 0, 0, 0, 0, 0, 0, 1]]
+def run(key):
+    num_bits_addr = key[0]
+    successes = 0
+    tries = 0
+    X = []
+    y = []
+    X_test = []
+    y_test = []
+    binary, result = r.get_binary_passengers('Resources/train.csv', key)
 
-y = ['class_1A','class_1C','class_1B','class_1C','class_1C','class_1B','class_1A','class_1C']
+    for i in range(0, int(0.8*len(binary))):
+        X.append(binary[i])
+        y.append(str(result[i]))
 
-retina_length = 64
-num_bits_addr = 2
+    for i in range(int(0.8*len(binary)), len(binary)):
+        X_test.append(binary[i])
+        y_test.append(str(result[i]))
 
-w = wi.WiSARD(num_bits_addr)
+    w = wi.WiSARD(num_bits_addr)
+    w.fit(X, y)
+    prediction = w.predict(X_test)
 
-# training discriminators
+    for i in range(0, len(X_test)):
+        if str(y_test[i]) == str(prediction[i]):
+            successes = successes + 1
 
-w.fit([X[0], X[1]], [y[0], y[1]])
+    return ("{0:.2f}").format(successes * 100 / float(len(X_test)))
 
-X_test = [[0, 1, 0, 0, 0, 0, 0, 0]]
-# w.predict(X_test)
+max_acc = 0
+max_key = []
 
-classes_marker = 0
+string = ""
+for porto in range(1, -1, -1):
+    for genero in range(1, -1, -1):
+        for idade in range(6, -1, -1):
+            for fare in range(6, -1, -1):
+                for cabine in range(1, -1, -1):
+                    for sibsp in range(3, -1, -1):
+                        for parch in range(3, -1, -1):
+                            for classe in range(3, -1, -1):
+                                for nba in range(1, 20):
+                                    key = [nba, porto, genero, idade, fare, cabine, sibsp, parch, classe]
+                                    print key
+                                    acc = run(key)
+                                    print acc
+                                    aux = "===========================\nNUM_BITS_ADDR: " + str(nba) + " || ACCURACY: " + str(acc) + "\nPorto: " + str(porto) + "\nGênero: " + str(genero) + "\nIdade: " + str(idade) + "\nFare: " + str(fare) + "\nCabine: " + str(cabine) + "\nSibsp: " + str(sibsp) + "\nParch: " + str(parch) + "\nClasse: " + str(classe) +"\nFull Key: " + str(key)
+                                    string += aux
+                                    if acc > max_acc:
+                                        print "New best: " + str(acc) + ", Old best: " + str(max_acc) + ", Key: " + str(key)
+                                        max_acc = acc
+                                        max_key = key
 
-for i in range(1, len(X)):
-    x = X[i]
-    fake_y = "1"
-    rez_score, rez_classes = w.predict([X[i]])
-    d_size = {}
-    
-    for j in range(0, len(rez_score[0])):
-        was_learned = False
-        minimum_score = 1
-        if fake_y in rez_classes[j] and rez_score[0][j] >= minimum_score:
-            if rez_classes[j] in d_size:
-                d_size[rez_classes[j]] += 1
-            else:
-                d_size[rez_classes[j]] = 1
-            
-            w.fit([x], [rez_classes[j]])        
-            was_learned = True
-    if not was_learned:
-        classes_marker += 1
-        new_class = "new_class_" + str(y[i]) + "_" + str(classes_marker)
-        w.fit([x], [new_class])
-        d_size[new_class] = 1
-
-X_test = [[1, 0, 0, 0, 0, 0, 0, 0]]
-print w.predict(X_test)
+f = open('Resources/full_results.csv','w')
+f.write(string)
+f.close()

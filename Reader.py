@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import csv
 
 class Passenger:
@@ -22,8 +24,8 @@ class Passenger:
         self.surname = surname
         self.name = name
         self.gender = gender
-        self.sibsp = sibsp
-        self.parch = parch
+        self.sibsp = int(sibsp)
+        self.parch = int(parch)
         self.ticket = ticket
         self.fare = fare
         self.cabin = cabin
@@ -46,44 +48,230 @@ class Passenger:
         string = string + "; Port: " + str(self.port) + "]"
         return string
 
-    def binarize(self):
+    def binarize(self, key):
         string = ""
-        if self.age < 1:
-            string = string + "000000"
-        elif self.age < 5:
-            string = string + "111111"
-        elif self.age < 20:
-            string = string + "000111"
-        elif self.age < 28:
-            string = string + "011001"
-        elif self.age < 38:
-            string = string + "101010"
-        else: #if self.age < 80:
-            string = string + "110100"
-            
-        if self.gender == "male":
-            string = string + "000000"
-        else:
-            string = string + "011001"
 
-        if self.t_class == "1":
-            string = string + "000000"
-        elif self.t_class == "2":
-            string = string + "011001"
-        else: #if self.t_class == "2":
-            string = string + "000111"
+        #Porto de Embarque
+        if key[1] == 1:
+            if self.port == "Q":
+                string = string + "000011"
+            elif self.port == "C":
+                string = string + "001100"
+            else: #1st class
+                string = string + "110000"
 
-        if self.port == "C":
-            string = string + "000000"
-        elif self.port == "Q":
-            string = string + "011001"
-        else: #if self.port == "S":
-            string = string + "000111"
+        #Gênero
+        if key[2] == 1:
+            if self.gender == "male":
+                string = string + "000000"
+            else:
+                string = string + "111111"
+        
+        #Idade
+        if key[3] == 1: #acumulado, absoluto
+            if self.age < 10:
+                string = string + "000001"
+            elif self.age < 20:
+                string = string + "000011"
+            elif self.age < 30:
+                string = string + "000111"
+            elif self.age < 40:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[3] == 2: #acumulado, genetico
+            if self.age < 1:
+                string = string + "000001"
+            elif self.age < 5:
+                string = string + "000011"
+            elif self.age < 28:
+                string = string + "000111"
+            elif self.age < 30:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[3] == 3: #acumulado, percentil
+            if self.age < 5:
+                string = string + "000001"
+            elif self.age < 20:
+                string = string + "000011"
+            elif self.age < 28:
+                string = string + "000111"
+            elif self.age < 38:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[3] == 4: #discriminado, absoluto
+            if self.age < 10:
+                string = string + "000000"
+            elif self.age < 20:
+                string = string + "000111"
+            elif self.age < 30:
+                string = string + "011001"
+            elif self.age < 40:
+                string = string + "101010"
+            else:
+                string = string + "110100"
+        elif key[3] == 5: #discriminado, genetico
+            if self.age < 1:
+                string = string + "000000"
+            elif self.age < 5:
+                string = string + "000111"
+            elif self.age < 28:
+                string = string + "011001"
+            elif self.age < 30:
+                string = string + "101010"
+            else:
+                string = string + "110100"
+        elif key[3] == 6: #discriminado, percentil
+            if self.age < 10:
+                string = string + "000000"
+            elif self.age < 20:
+                string = string + "000111"
+            elif self.age < 30:
+                string = string + "011001"
+            elif self.age < 40:
+                string = string + "101010"
+            else:
+                string = string + "110100"
 
-        if self.cabin == "":
-            string = string + "000000"
-        else:
-            string = string + "011001"
+        #Fare
+        if key[4] == 1: #acumulado, absoluto
+            if self.fare < 10:
+                string = string + "000001"
+            elif self.fare < 20:
+                string = string + "000011"
+            elif self.fare < 50:
+                string = string + "000111"
+            elif self.fare < 100:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[4] == 2: #acumulado, genetico
+            if self.fare < 1:
+                string = string + "000001"
+            elif self.fare < 7:
+                string = string + "000011"
+            elif self.fare < 15:
+                string = string + "000111"
+            elif self.fare < 51:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[4] == 3: #acumulado, percentil
+            if self.fare < 7:
+                string = string + "000001"
+            elif self.fare < 10:
+                string = string + "000011"
+            elif self.fare < 21:
+                string = string + "000111"
+            elif self.fare < 39:
+                string = string + "001111"
+            else:
+                string = string + "011111"
+        elif key[4] == 4: #discriminado, absoluto
+            if self.fare < 10:
+                string = string + "000000"
+            elif self.fare < 20:
+                string = string + "000111"
+            elif self.fare < 50:
+                string = string + "011001"
+            elif self.fare < 100:
+                string = string + "101010"
+            else:
+                string = string + "110100"
+        elif key[4] == 5: #discriminado, genetico
+            if self.fare < 1:
+                string = string + "000000"
+            elif self.fare < 7:
+                string = string + "000111"
+            elif self.fare < 15:
+                string = string + "011001"
+            elif self.fare < 51:
+                string = string + "101010"
+            else:
+                string = string + "110100"
+        elif key[4] == 6: #discriminado, percentil
+            if self.fare < 7:
+                string = string + "000000"
+            elif self.fare < 10:
+                string = string + "000111"
+            elif self.fare < 21:
+                string = string + "011001"
+            elif self.fare < 39:
+                string = string + "101010"
+            else:
+                string = string + "110100"
+        
+        #Cabine
+        if key[5] == 1:
+            if self.cabin == "":
+                string = string + "111111"
+            else:
+                string = string + "000000"
+        
+        #Sibsp
+        if key[6] == 1: #acumulado, absoluto
+            if self.sibsp == 0:
+                string = string + "000000"
+            elif self.sibsp < 3:
+                string = string + "000111"
+            else:
+                string = string + "111111"
+        elif key[6] == 2: #discriminado, absoluto
+            if self.sibsp == 0:
+                string = string + "000000"
+            elif self.sibsp < 3:
+                string = string + "000111"
+            else:
+                string = string + "111000"
+        elif key[6] == 3: #binario
+            if self.sibsp == 0:
+                string = string + "000000"
+            else:
+                string = string + "111111"
+
+        #Parch
+        if key[7] == 1: #acumulado, absoluto
+            if self.parch == 0:
+                string = string + "000000"
+            elif self.parch < 3:
+                string = string + "000111"
+            else:
+                string = string + "111111"
+        elif key[7] == 2: #discriminado, absoluto
+            if self.parch == 0:
+                string = string + "000000"
+            elif self.parch < 3:
+                string = string + "000111"
+            else:
+                string = string + "111000"
+        elif key[7] == 3: #binario
+            if self.parch == 0:
+                string = string + "000000"
+            else:
+                string = string + "111111"
+
+        #Classe
+        if key[8] == 1: #acumulado, absoluto
+            if self.t_class == "3":
+                string = string + "000000"
+            elif self.t_class == "2":
+                string = string + "000111"
+            else: #1st class
+                string = string + "111111"
+        elif key[8] == 2: #discriminado, absoluto
+            if self.t_class == "3":
+                string = string + "000000"
+            elif self.t_class == "2":
+                string = string + "000111"
+            else: #1st class
+                string = string + "111000"
+        elif key[8] == 3: #binario
+            if self.t_class != "1":
+                string = string + "000000"
+            else: #1st class
+                string = string + "111111"
 
         return string, self.survived
 
@@ -142,6 +330,12 @@ def get_data(filename):
 
             i = i + 1
             fare = row[i]
+            if "." in fare:
+                fare = int(fare.split(".")[0])
+            elif fare == "":
+                fare = 0
+            else:
+                fare = int(fare)
 
             i = i + 1
             cabin = row[i]
@@ -167,12 +361,12 @@ def get_data(filename):
     
     return people
 
-def get_binary_passengers(filename):
+def get_binary_passengers(filename, key=[17, 1, 1, 6, 6, 1, 3, 2, 3]):
     output = []
     result = []
     data = get_data(filename)
     for p in data:
-        string, survived = p.binarize()
+        string, survived = p.binarize(key)
         output.append(binary_string_to_int_array(string))
         result.append(survived)
     return output, result
