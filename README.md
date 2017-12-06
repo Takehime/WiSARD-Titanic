@@ -1,11 +1,14 @@
 # WiSARD-Titanic
 
 Trabalho final da disciplina Redes Neurais Sem Peso - UFRJ 2017.2
+
 Integrantes: Silvia Pimpão Vasquez e Vinícius Garcia Silva da Costa
+
 
 **Dataset utilizado**
 
 https://www.kaggle.com/c/titanic/data
+
 
 **Para rodar**
 
