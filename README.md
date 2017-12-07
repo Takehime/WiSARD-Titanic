@@ -14,7 +14,6 @@ https://www.kaggle.com/c/titanic/data
 
 Executar a Main.py seguida da escolha dos seguintes parâmetros:
 
-    Main.py [T | G]
     [T (key)]: Train with 80% of training set and test on the other 20%
     [T* (key*)]: Same as T, but tests with every num_bits_address in the range (0, 20)
     [G (key)]: Train with the entirety of the training set and test on the test set, generating a file 'result.csv' in Resources folder.
