@@ -21,3 +21,7 @@ Executar a Main.py seguida da escolha dos seguintes parâmetros:
     
     Key format: [num_bits_addr, (0, 1), (0, 1), (0, 6), (0, 6), (0, 1), (0, 3), (0, 3), (0, 3)]
     Key* format: [(0, 1), (0, 1), (0, 6), (0, 6), (0, 1), (0, 3), (0, 3), (0, 3)]
+
+Exemplo:
+
+    python Main.py C 10 8 1 1 0 0 1 2 1 2
