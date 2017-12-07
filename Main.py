@@ -174,7 +174,6 @@ if __name__ == "__main__":
             print_usage()
             sys.exit(0)
         else:
-            global key
             k1 = int(sys.argv[2])
             k2 = int(sys.argv[3])
             k3 = int(sys.argv[4])
@@ -193,7 +192,6 @@ if __name__ == "__main__":
             sys.exit(0)
         else:
             k_folds = int(sys.argv[2])
-            global key
             k1 = int(sys.argv[3])
             k2 = int(sys.argv[4])
             k3 = int(sys.argv[5])
@@ -230,7 +228,6 @@ if __name__ == "__main__":
             print_usage()
             sys.exit(0)
         else:
-            global key
             k1 = int(sys.argv[2])
             k2 = int(sys.argv[3])
             k3 = int(sys.argv[4])
@@ -248,7 +245,6 @@ if __name__ == "__main__":
             print_usage()
             sys.exit(0)
         else:
-            global key
             k1 = int(sys.argv[2])
             k2 = int(sys.argv[3])
             k3 = int(sys.argv[4])
