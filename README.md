@@ -14,12 +14,11 @@ https://www.kaggle.com/c/titanic/data
 
 Executar a Main.py seguida da escolha dos seguintes parâmetros:
 
-    [T]: Treina apenas os primeiros 80% do dataset de treinamento e testa com os 20% restantes da mesma base. (num_bits_addr = 5)
-
-    [T*]: Mesmo que o T porém testa com todos os números de bits de endereçamente no intervalo (0, 40).
-
-    [G (n)]: Treina com toda a base de dados de teste e gera um arquivo 'result.csv' na pasta 'Resources' possibilitando o envio do mesmo ao Kaggle. Usa 'n' como num_bits_addr.
-
-    [CW (n) (g) (s)]: Realiza o treinamento pela ClusWiSARD, sendo 'n' o número de bits de endereçamento, 'g' o coeficiente de crescimento e 's' o score minímo.
-
-    [C (k)]: Realiza o treinamento utilizando Cross-Validation, onde 'k' é o número de folds utilizados.
+    Main.py [T | G]
+    [T (key)]: Train with 80% of training set and test on the other 20%
+    [T* (key*)]: Same as T, but tests with every num_bits_address in the range (0, 20)
+    [G (key)]: Train with the entirety of the training set and test on the test set, generating a file 'result.csv' in Resources folder.
+    [C (num_of_folds) (key)]: Cross-Validation with the given number of folds.
+    
+    Key format: [num_bits_addr, (0, 1), (0, 1), (0, 6), (0, 6), (0, 1), (0, 3), (0, 3), (0, 3)]
+    Key* format: [(0, 1), (0, 1), (0, 6), (0, 6), (0, 1), (0, 3), (0, 3), (0, 3)]
