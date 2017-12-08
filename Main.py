@@ -9,7 +9,7 @@ def generate_test_prediction(num_bits_addr):
     global key
 
     binary, result = r.get_binary_passengers('Resources/train.csv', key)
-    
+
     X = []
     y = []
     w = wi.WiSARD(key[0])
@@ -23,8 +23,8 @@ def generate_test_prediction(num_bits_addr):
 
     output = "PassengerId,Survived\n"
     for i in range(0, len(binary)):
-        prediction = str(w.predict([binary[i]]))
-        if str(prediction) == "True":
+        prediction = str(w.predict([binary[i]])[0])
+        if prediction == "True":
             output = output + str(passengers[i].p_id) + "," + "1\n"
         else:
             output = output + str(passengers[i].p_id) + "," + "0\n"
